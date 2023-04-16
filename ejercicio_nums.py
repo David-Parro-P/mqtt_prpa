@@ -21,7 +21,7 @@ def on_message(client, userdata, msg):
     else:
         print("Real")
     
-def main(hostname):
+def main(broker):
     client = Client()
     client.enable_logger()
     client.on_message = on_message
