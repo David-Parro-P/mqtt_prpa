@@ -9,7 +9,7 @@ Created on Sun Apr 16 21:39:19 2023
 from paho.mqtt.client import Client
 from multiprocessing import Process
 from time import sleep
-
+import sys
 
 def timer(client, msg):
     mensaje = msg.payload.split(", ")
@@ -35,7 +35,6 @@ def main(broker):
     client.loop_forever
     
 if __name__ == "__main__":
-    import sys
     if len(sys.argv)<2:
         print(f"Usage: {sys.argv[0]} broker")
         sys.exit(1)
